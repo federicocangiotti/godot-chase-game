@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwt5weys0c0ay"]
-
-[ext_resource type="Texture2D" uid="uid://btomrd5tjrsue" path="res://Textures/Cards/Back_Card.png" id="2_ionup"]
-
-[node name="FrontFace" type="TextureRect"]
-offset_right = 504.0
-offset_bottom = 481.0
-texture = ExtResource("2_ionup")

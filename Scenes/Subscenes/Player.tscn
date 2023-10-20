@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcjss86ry5545"]
+
+[ext_resource type="Script" path="res://Scenes/Subscenes/Player.gd" id="1_g6r47"]
+[ext_resource type="Texture2D" uid="uid://dnlksg3tvc7yq" path="res://Textures/bugs-bunny-communist-1.jpg" id="2_vh8ql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57dsm"]
+size = Vector2(58, 48)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g6r47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_57dsm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.07, 0.106667)
+texture = ExtResource("2_vh8ql")
+flip_v = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
