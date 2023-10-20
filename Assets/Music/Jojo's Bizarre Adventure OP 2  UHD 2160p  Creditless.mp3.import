@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dyun34ylgs6gy"
+path="res://.godot/imported/Jojo's Bizarre Adventure OP 2  UHD 2160p  Creditless.mp3-01b944c8302ce84fe729b1529315a5cd.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Jojo's Bizarre Adventure OP 2  UHD 2160p  Creditless.mp3"
+dest_files=["res://.godot/imported/Jojo's Bizarre Adventure OP 2  UHD 2160p  Creditless.mp3-01b944c8302ce84fe729b1529315a5cd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

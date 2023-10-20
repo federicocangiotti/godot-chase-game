@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp7p3cumnyceb"
+path="res://.godot/imported/Tarantella Napoletana.mp3-b37718cfe2397633dc1645a5bb0d3048.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Tarantella Napoletana.mp3"
+dest_files=["res://.godot/imported/Tarantella Napoletana.mp3-b37718cfe2397633dc1645a5bb0d3048.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

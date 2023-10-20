@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cq2j1kfvpmuw7"
+path="res://.godot/imported/Pokémon Center (Night)[Pokémon- Diamond & Pearl].mp3-c886a457544bd15e8d5f29d1b80c4413.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Pokémon Center (Night)[Pokémon- Diamond & Pearl].mp3"
+dest_files=["res://.godot/imported/Pokémon Center (Night)[Pokémon- Diamond & Pearl].mp3-c886a457544bd15e8d5f29d1b80c4413.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

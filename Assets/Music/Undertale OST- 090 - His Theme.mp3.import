@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxdbljgd6mmkb"
+path="res://.godot/imported/Undertale OST- 090 - His Theme.mp3-11dfa233d6f283691ded2eabba1f4337.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Undertale OST- 090 - His Theme.mp3"
+dest_files=["res://.godot/imported/Undertale OST- 090 - His Theme.mp3-11dfa233d6f283691ded2eabba1f4337.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

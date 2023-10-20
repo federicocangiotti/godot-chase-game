@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8e7cmae4uebk"
+path="res://.godot/imported/Merry Go Round of Life - Howl's Moving Castle (Joe Hisaishi).mp3-d8c95a6cb0595038ee4b0092ccd15bd1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Merry Go Round of Life - Howl's Moving Castle (Joe Hisaishi).mp3"
+dest_files=["res://.godot/imported/Merry Go Round of Life - Howl's Moving Castle (Joe Hisaishi).mp3-d8c95a6cb0595038ee4b0092ccd15bd1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
