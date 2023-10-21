@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy7t7goratros"
-path="res://.godot/imported/esciHover.png-9f5ba580139064c742a277010cb95bb6.ctex"
+uid="uid://cq5lmkbiabt5s"
+path="res://.godot/imported/MainMenuBackground.jpg-057b83c2115fb6e105f807975a6e3169.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Buttons/esciHover.png"
-dest_files=["res://.godot/imported/esciHover.png-9f5ba580139064c742a277010cb95bb6.ctex"]
+source_file="res://Textures/MainMenuBackground.jpg"
+dest_files=["res://.godot/imported/MainMenuBackground.jpg-057b83c2115fb6e105f807975a6e3169.ctex"]
 
 [params]
 

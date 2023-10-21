@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0u33dd8g2akm"
-path="res://.godot/imported/gioca.png-eac6dcdc38102fab919d39daec7e4acf.ctex"
+uid="uid://b7xhs7kkedbpb"
+path="res://.godot/imported/ChaseRunnerLogo.png-00a905bac5c9c295bd40c8117cbb4080.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Buttons/gioca.png"
-dest_files=["res://.godot/imported/gioca.png-eac6dcdc38102fab919d39daec7e4acf.ctex"]
+source_file="res://Textures/ChaseRunnerLogo.png"
+dest_files=["res://.godot/imported/ChaseRunnerLogo.png-00a905bac5c9c295bd40c8117cbb4080.ctex"]
 
 [params]
 
