@@ -1,20 +1,31 @@
 extends CharacterBody2D
 
-var health = 3 
-
-var wheel_base = 70
-var steering_angle = 30 #15
+# player health
+var health = 3
+# -1000 great break, -100 poor brake 
+var braking
+# 20 - 45
+var steering_angle = 30
+# 100 - 1000
 var engine_power = 900
-var friction = -55
-var drag = -0.06
-var braking = -450
+# speed limit for reverse
 var max_speed_reverse = 300
-var slip_speed = 400
-var traction_fast = 2.5
+var wheel_base = 70
+
+var traction_fast = 10
 var traction_slow = 10
+var friction = -1
+var drag = -0.1
+var slip_speed = 100
 
 var acceleration = Vector2.ZERO
 var steer_direction
+
+func _ready():
+	$Sprite2D.texture = ResourceLoader.load(Global.selected_player.sprite)
+	braking = Global.selected_player.braking
+	engine_power = 	Global.selected_player.engine_power
+	max_speed_reverse = Global.selected_player.max_speed_reverse
 
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
@@ -25,7 +36,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if health <= 0:
-		#queue_free()
+		queue_free()
 		$"../Window".visible = true
 	
 func apply_friction(delta):

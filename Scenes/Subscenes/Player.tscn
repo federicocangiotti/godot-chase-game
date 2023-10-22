@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcjss86ry5545"]
+[gd_scene load_steps=4 format=3 uid="uid://cs0eb746jpppr"]
 
 [ext_resource type="Script" path="res://Scenes/Subscenes/Player.gd" id="1_g6r47"]
 [ext_resource type="Texture2D" uid="uid://ckci3b1vkv41" path="res://Textures/Cars/car1.png" id="2_xw0sm"]

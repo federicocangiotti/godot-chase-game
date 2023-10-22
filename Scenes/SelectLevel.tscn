@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3gfn868dsffa"]
+
+[ext_resource type="Theme" uid="uid://bgb7t63ytou7k" path="res://Assets/Theme/DarkTheme/Dark.theme" id="1_2aqmn"]
+[ext_resource type="Script" path="res://Scenes/SelectLevel.gd" id="1_8abk2"]
+
+[node name="SelectLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8abk2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -258.0
+offset_top = 200.0
+offset_right = 258.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme = ExtResource("1_2aqmn")
+theme_override_font_sizes/normal_font_size = 32
+text = "Seleziona un livello e un veicolo"
+
+[node name="Livelli" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -552.0
+offset_right = 482.0
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="Livelli"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="Citta1" type="Button" parent="Livelli/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_2aqmn")
+theme_override_font_sizes/font_size = 30
+text = "Città 1"
+
+[node name="Citta2" type="Button" parent="Livelli/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_2aqmn")
+theme_override_font_sizes/font_size = 30
+text = "Città 2"
+
+[node name="Veicoli" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -482.0
+offset_top = -552.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="GridContainer2" type="GridContainer" parent="Veicoli"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="Sportiva" type="Button" parent="Veicoli/GridContainer2"]
+layout_mode = 2
+theme = ExtResource("1_2aqmn")
+theme_override_font_sizes/font_size = 30
+text = "Sportiva"
+
+[node name="Fuoristrada" type="Button" parent="Veicoli/GridContainer2"]
+layout_mode = 2
+theme = ExtResource("1_2aqmn")
+theme_override_font_sizes/font_size = 30
+text = "Fuoristrada"
+
+[node name="Gioca" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.5
+offset_top = -280.0
+offset_right = 103.5
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_2aqmn")
+theme_override_font_sizes/font_size = 45
+text = " Gioca"
+
+[connection signal="pressed" from="Livelli/GridContainer/Citta1" to="." method="_on_citta_1_pressed"]
+[connection signal="pressed" from="Livelli/GridContainer/Citta2" to="." method="_on_citta_2_pressed"]
+[connection signal="pressed" from="Veicoli/GridContainer2/Sportiva" to="." method="_on_sportiva_pressed"]
+[connection signal="pressed" from="Veicoli/GridContainer2/Fuoristrada" to="." method="_on_fuoristrada_pressed"]
+[connection signal="pressed" from="Gioca" to="." method="_on_gioca_pressed"]

@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.1", "Mobile")
 [autoload]
 
 MusicController="*res://Scripts/MusicHandler/MusicController.tscn"
+Global="*res://Scripts/Global.gd"
 
 [display]
 
