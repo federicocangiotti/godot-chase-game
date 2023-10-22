@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1yo023ypt7vi"]
+[gd_scene load_steps=14 format=3 uid="uid://c1yo023ypt7vi"]
 
 [ext_resource type="Script" path="res://Scripts/Playground/btnBack.gd" id="1_aqxrq"]
-[ext_resource type="PackedScene" uid="uid://bcjss86ry5545" path="res://Scenes/Subscenes/Player.tscn" id="2_bnycu"]
+[ext_resource type="PackedScene" path="res://Scenes/Subscenes/Player.tscn" id="2_bnycu"]
 [ext_resource type="Texture2D" uid="uid://jrphukx5hw1n" path="res://Textures/tileset_cars.png" id="3_pcwsd"]
 [ext_resource type="Texture2D" uid="uid://cuytaaivl8yh7" path="res://Textures/tileset_city.png" id="4_qj01n"]
+[ext_resource type="PackedScene" uid="uid://bbam0hepwg2xd" path="res://Scenes/Subscenes/Enemy.tscn" id="5_7dm42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sk3w7"]
 size = Vector2(2840.19, 36)
@@ -4808,13 +4809,21 @@ texture = ExtResource("4_qj01n")
 [sub_resource type="TileSet" id="TileSet_lc20y"]
 sources/0 = SubResource("TileSetAtlasSource_njy10")
 
+[sub_resource type="GDScript" id="GDScript_eq62v"]
+script/source = "extends Label
+
+#update ui health
+func _process(delta):
+	text = \"Vite: \" + str(get_node(NodePath(\"../../Player\")).health)
+"
+
 [node name="Playground" type="Node2D"]
 
 [node name="btnBack" type="Button" parent="."]
-offset_left = 17.0
-offset_top = 16.0
-offset_right = 140.0
-offset_bottom = 52.0
+offset_left = 38.0
+offset_top = -97.0
+offset_right = 161.0
+offset_bottom = -61.0
 text = "Torna al menu"
 script = ExtResource("1_aqxrq")
 
@@ -4851,4 +4860,42 @@ tile_set = SubResource("TileSet_lc20y")
 format = 2
 layer_0/tile_data = PackedInt32Array(3145848, 196608, 38, 3145849, 196608, 38, 3145854, 196608, 38, 3145853, 196608, 38, 3145852, 196608, 38, 3145851, 196608, 38, 3145850, 196608, 38, 3145847, 196608, 38, 3145846, 196608, 38, 3211391, 196608, 38, 3211390, 196608, 38, 3211389, 196608, 38, 3211388, 196608, 38, 3211387, 196608, 38, 3211386, 196608, 38, 3211385, 196608, 38, 3211384, 196608, 38, 3211383, 196608, 38, 3211382, 196608, 38, 3080311, 196608, 38, 3080310, 196608, 38, 3080309, 196608, 38, 3080308, 196608, 38, 3080307, 196608, 38, 3080306, 196608, 38, 3080305, 196608, 38, 3014774, 196608, 38, 3014773, 196608, 38, 3014772, 196608, 38, 3014771, 196608, 38, 3014770, 196608, 38, 3014769, 196608, 38, 3014768, 196608, 38)
 
+[node name="Enemy" parent="." instance=ExtResource("5_7dm42")]
+position = Vector2(877, 479)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hp" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 81.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 16
+text = "HP"
+script = SubResource("GDScript_eq62v")
+
+[node name="Window" type="Window" parent="."]
+initial_position = 2
+size = Vector2i(350, 200)
+visible = false
+always_on_top = true
+
+[node name="Camera2D" type="Camera2D" parent="Window"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Camera2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Window/Camera2D/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Hai perso"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Window/Camera2D/VBoxContainer"]
+layout_mode = 2
+text = "Torna al menu"
+
 [connection signal="pressed" from="btnBack" to="btnBack" method="_on_pressed"]
+[connection signal="pressed" from="Window/Camera2D/VBoxContainer/Button" to="btnBack" method="_on_button_pressed"]

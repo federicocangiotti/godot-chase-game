@@ -13,4 +13,7 @@ func _process(delta):
 
 func _on_pressed():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
-	pass # Replace with function body.
+
+# popup button
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
