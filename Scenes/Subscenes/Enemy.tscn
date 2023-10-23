@@ -1,38 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbam0hepwg2xd"]
+[gd_scene load_steps=4 format=3 uid="uid://bbam0hepwg2xd"]
 
 [ext_resource type="Script" path="res://Scenes/Subscenes/Enemy.gd" id="1_hyxun"]
-[ext_resource type="Texture2D" uid="uid://ckci3b1vkv41" path="res://Textures/Cars/car1.png" id="2_a8q6p"]
+[ext_resource type="Texture2D" uid="uid://b5uf0kbf55o8i" path="res://Textures/Cars/train.png" id="2_umfft"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ckec"]
-size = Vector2(94.75, 44.5)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_jxcpj"]
-radius = 335.001
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryxe3"]
-size = Vector2(98, 47)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60atd"]
+radius = 45.7143
+height = 148.571
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_hyxun")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.625, 0.75)
-shape = SubResource("RectangleShape2D_1ckec")
+position = Vector2(-2, -3)
+rotation = 1.5708
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CapsuleShape2D_60atd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_a8q6p")
+position = Vector2(-2, -3)
+texture = ExtResource("2_umfft")
 
-[node name="PlayerDetection" type="Area2D" parent="."]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-shape = SubResource("CircleShape2D_jxcpj")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
 
-[node name="PlayerDamage" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDamage"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_ryxe3")
-
-[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
-[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
-[connection signal="body_entered" from="PlayerDamage" to="." method="_on_player_damage_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
