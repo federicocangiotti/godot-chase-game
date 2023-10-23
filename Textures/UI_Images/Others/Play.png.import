@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jrphukx5hw1n"
-path="res://.godot/imported/tileset_cars.png-8b27426cbce9996b7ad33a6a9a853521.ctex"
+uid="uid://do2gi2m467qu1"
+path="res://.godot/imported/Play.png-c59674e167ccb7a4bab072a1283bafa6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/tileset_cars.png"
-dest_files=["res://.godot/imported/tileset_cars.png-8b27426cbce9996b7ad33a6a9a853521.ctex"]
+source_file="res://Textures/UI_Images/Others/Play.png"
+dest_files=["res://.godot/imported/Play.png-c59674e167ccb7a4bab072a1283bafa6.ctex"]
 
 [params]
 
