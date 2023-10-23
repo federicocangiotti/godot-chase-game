@@ -9,12 +9,10 @@ var CurrentMusic = ""
 var FullScreenCheckBoxPressed
 
 var Resolutions: Dictionary = {"1920x1080":Vector2i(1920,1080),
-								"1600x900":Vector2i(1600,900),
-								"1536x864":Vector2i(1536,864),
-								"1440x900":Vector2i(1440,900),
-								"1366x768":Vector2i(1366,768),
-								"1024x600":Vector2i(1024,600),
-								"800x600":Vector2i(800,600),}
+	"1600x900":Vector2i(1600,900),
+	"1536x864":Vector2i(1536,864),
+	"1440x900":Vector2i(1440,900),
+	"1366x768":Vector2i(1366,768),}
 
 func _on_main_menu_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
@@ -39,8 +37,6 @@ func _process(delta):
 	pass
 
 func AddMusic():
-	
-	
 	var index = 0
 	
 	for i in MusicController.Musics:
@@ -79,6 +75,8 @@ func _on_music_button_item_selected(index):
 func _on_full_screen_check_box_toggled(button_pressed: bool) -> void:
 	if button_pressed == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		ResOptionButton.visible = false
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		ResOptionButton.visible = true
 	pass # Replace with function body.
