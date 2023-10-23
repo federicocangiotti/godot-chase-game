@@ -9,11 +9,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-# popup button
-func _on_button_pressed():
+
+
+func _on_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Options.tscn")
-	
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_ESCAPE:
-			get_tree().change_scene_to_file("res://Scenes/Options.tscn")
+	pass # Replace with function body.
