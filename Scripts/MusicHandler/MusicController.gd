@@ -11,7 +11,8 @@ var Musics: Dictionary = {"Seleziona musica/musica spenta":(""),
 							"Tarantella Napoletana":("res://Assets/Music/Tarantella Napoletana.mp3"),
 							"Long elevator": ("res://Assets/Music/Undertale OST- 070 - Long Elevator.mp3"),
 							"His theme": ("res://Assets/Music/Undertale OST- 090 - His Theme.mp3"),
-							"Tedeschia": ("res://Assets/Music/Was ist dein Lieblingsfach.mp3")}
+							"Tedeschia": ("res://Assets/Music/Was ist dein Lieblingsfach.mp3"),
+							"GTA_San Andreas": ("res://Assets/Music/Grand-Theft-Auto-San-Andreas-Theme-Song.mp3")}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
