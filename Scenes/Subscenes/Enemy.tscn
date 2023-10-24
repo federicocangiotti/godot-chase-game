@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbam0hepwg2xd"]
 
 [ext_resource type="Script" path="res://Scenes/Subscenes/Enemy.gd" id="1_hyxun"]
-[ext_resource type="Texture2D" uid="uid://b5uf0kbf55o8i" path="res://Textures/Cars/train.png" id="2_umfft"]
+[ext_resource type="Texture2D" uid="uid://co6dgi7ydwjnh" path="res://Textures/Cars/police.png" id="2_t7y0m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60atd"]
 radius = 45.7143
@@ -12,21 +12,28 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_hyxun")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -3)
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="DamageCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(30, -2)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 shape = SubResource("CapsuleShape2D_60atd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(-2, -3)
-texture = ExtResource("2_umfft")
+texture = ExtResource("2_t7y0m")
+offset = Vector2(30, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(30, -2)
+rotation = 1.5708
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CapsuleShape2D_60atd")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
