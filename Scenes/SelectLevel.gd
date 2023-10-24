@@ -7,7 +7,7 @@ func _on_citta_1_pressed():
 
 # set level to cita2
 func _on_citta_2_pressed():
-	#Global.selected_level = "res://Scenes/..."
+	Global.selected_level = "res://Scenes/Playground2.tscn"
 	pass
 
 
