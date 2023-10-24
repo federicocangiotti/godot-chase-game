@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3gfn868dsffa"]
+[gd_scene load_steps=8 format=3 uid="uid://b3gfn868dsffa"]
 
 [ext_resource type="Theme" uid="uid://bgb7t63ytou7k" path="res://Assets/Theme/DarkTheme/Dark.theme" id="1_2aqmn"]
 [ext_resource type="Script" path="res://Scenes/SelectLevel.gd" id="1_8abk2"]
+[ext_resource type="Texture2D" uid="uid://c5ipqo6tdf7lt" path="res://Textures/UI_Images/Backgrounds/SelectLevelBackground.png" id="2_e2q6j"]
+[ext_resource type="Texture2D" uid="uid://cnl3678thltr0" path="res://Textures/UI_Images/Frames/OptionsFrameBack.png" id="3_vprk4"]
+[ext_resource type="Texture2D" uid="uid://p3qwfh6adshr" path="res://Textures/UI_Images/Others/CityAndCarSelection.png" id="4_pjp0a"]
+[ext_resource type="Texture2D" uid="uid://bebq58fdcevhg" path="res://Textures/UI_Images/Frames/MainMenuFrameBack.png" id="5_ha5bh"]
+[ext_resource type="Texture2D" uid="uid://do2gi2m467qu1" path="res://Textures/UI_Images/Others/Play.png" id="7_l0ljr"]
 
 [node name="SelectLevel" type="Control"]
 layout_mode = 3
@@ -12,94 +17,155 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8abk2")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e2q6j")
+
+[node name="TitleFrame" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -258.0
-offset_top = 200.0
-offset_right = 258.0
-offset_bottom = 246.0
+offset_left = -425.0
+offset_top = 123.0
+offset_right = 442.0
+offset_bottom = 262.0
 grow_horizontal = 2
-theme = ExtResource("1_2aqmn")
-theme_override_font_sizes/normal_font_size = 32
-text = "Seleziona un livello e un veicolo"
+texture = ExtResource("3_vprk4")
+expand_mode = 1
 
-[node name="Livelli" type="VBoxContainer" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -399.5
+offset_top = 135.0
+offset_right = 399.5
+offset_bottom = 113.0
+grow_horizontal = 2
+texture = ExtResource("4_pjp0a")
+
+[node name="CityFrame" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 104.0
+offset_top = -132.5
+offset_right = 718.0
+offset_bottom = 252.5
+grow_vertical = 2
+texture = ExtResource("5_ha5bh")
+expand_mode = 1
+
+[node name="CarFrame" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.583
+anchor_top = 0.5
+anchor_right = 0.583
+anchor_bottom = 0.5
+offset_left = 103.64
+offset_top = -132.5
+offset_right = 717.64
+offset_bottom = 252.5
+grow_vertical = 2
+texture = ExtResource("5_ha5bh")
+expand_mode = 1
+
+[node name="CitySelected" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 475.5
+offset_right = 656.0
+offset_bottom = 743.5
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CarSelected" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1322.0
+offset_top = 534.5
+offset_right = 1738.0
+offset_bottom = 708.5
+
+[node name="Livelli" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -552.0
-offset_right = 482.0
-grow_vertical = 0
+offset_left = 157.0
+offset_top = 410.5
+offset_right = -136.0
+offset_bottom = -529.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
 
 [node name="GridContainer" type="GridContainer" parent="Livelli"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 2
+size_flags_vertical = 6
 columns = 2
 
 [node name="Citta1" type="Button" parent="Livelli/GridContainer"]
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 theme = ExtResource("1_2aqmn")
 theme_override_font_sizes/font_size = 30
-text = "Città 1"
+text = "Citta' 1"
 
 [node name="Citta2" type="Button" parent="Livelli/GridContainer"]
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 theme = ExtResource("1_2aqmn")
 theme_override_font_sizes/font_size = 30
-text = "Città 2"
+text = "Citta' 2"
 
-[node name="Veicoli" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -482.0
-offset_top = -552.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="GridContainer2" type="GridContainer" parent="Veicoli"]
+[node name="GridContainer2" type="GridContainer" parent="Livelli"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 10
+size_flags_vertical = 6
 columns = 2
 
-[node name="Sportiva" type="Button" parent="Veicoli/GridContainer2"]
+[node name="Sportiva" type="Button" parent="Livelli/GridContainer2"]
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 theme = ExtResource("1_2aqmn")
 theme_override_font_sizes/font_size = 30
 text = "Sportiva"
 
-[node name="Fuoristrada" type="Button" parent="Veicoli/GridContainer2"]
+[node name="Fuoristrada" type="Button" parent="Livelli/GridContainer2"]
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 theme = ExtResource("1_2aqmn")
 theme_override_font_sizes/font_size = 30
 text = "Fuoristrada"
 
-[node name="Gioca" type="Button" parent="."]
+[node name="Gioca" type="TextureButton" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.65
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -103.5
-offset_top = -280.0
-offset_right = 103.5
-offset_bottom = -220.0
+anchor_bottom = 0.65
+offset_left = -234.5
+offset_top = -321.0
+offset_right = 246.5
+offset_bottom = 132.0
 grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("1_2aqmn")
-theme_override_font_sizes/font_size = 45
-text = " Gioca"
+grow_vertical = 2
+texture_normal = ExtResource("7_l0ljr")
 
 [connection signal="pressed" from="Livelli/GridContainer/Citta1" to="." method="_on_citta_1_pressed"]
 [connection signal="pressed" from="Livelli/GridContainer/Citta2" to="." method="_on_citta_2_pressed"]
-[connection signal="pressed" from="Veicoli/GridContainer2/Sportiva" to="." method="_on_sportiva_pressed"]
-[connection signal="pressed" from="Veicoli/GridContainer2/Fuoristrada" to="." method="_on_fuoristrada_pressed"]
+[connection signal="pressed" from="Livelli/GridContainer2/Sportiva" to="." method="_on_sportiva_pressed"]
+[connection signal="pressed" from="Livelli/GridContainer2/Fuoristrada" to="." method="_on_fuoristrada_pressed"]
 [connection signal="pressed" from="Gioca" to="." method="_on_gioca_pressed"]

@@ -1,51 +1,30 @@
 extends CharacterBody2D
 
-var collision_thread = Thread.new()
-var chase = false
-var targeted_entity = null
-var speed = 150
+const speed = 100
 
-# turn on chasing if the target entered the enemy area
-func _physics_process(delta):
-	if chase == true:
-		rotation = global_position.angle_to_point(targeted_entity.global_position)
-		velocity = Vector2(cos(rotation), sin(rotation)) * speed
-		move_and_slide()
+@export var player: Node2D
+@onready var Nav_agent := $NavigationAgent2D as NavigationAgent2D
+#@export var steer_force = 50.0
+#
+#var target = null
+
+func _physics_process(_delta: float) -> void:
+	var dir = to_local(Nav_agent.get_next_path_position()).normalized()
+	velocity = dir * speed
+	Nav_agent.target_position = player.global_position
+	$Area2D/Sprite2D.global_rotation = $Area2D/Sprite2D.global_position.angle_to_point(Nav_agent.target_position)
+	move_and_slide()
+
+func _on_area_2d_body_entered(body):
+	print("PROVA")
+	queue_free()
+	$"../Window".visible = true
 	
-# if player enters enemy area
-func _on_player_detection_body_entered(body):
-	if body.name == "Player":
-		targeted_entity = body
-		chase = true
+	pass # Replace with function body.
 
-# if player exits enemy area
-func _on_player_detection_body_exited(body):
-	if body.name == "Player":
-		chase = false
+#func _on_timer_timeout() -> void:
+#	makepath()
+#	pass # Replace with function body. t
 
-func _on_player_damage_body_entered(body):
-	if body.name == "Player":
-		body.health -= 1
-		$CollisionShape2D.disabled = true
-		$PlayerDetection/CollisionShape2D.disabled = true
-		$PlayerDamage/CollisionShape2D.disabled = true
-		
-		disable_collision()
-		active_collision()
 
-func disable_collision():
-	$".".set_collision_layer(0)
-	$".".set_collision_mask(0)
 
-	$PlayerDetection.monitoring = false
-	$PlayerDetection/CollisionShape2D.disabled = true
-	$PlayerDamage/CollisionShape2D.disabled = true
-
-func active_collision():
-	await get_tree().create_timer(3).timeout
-	
-	$".".set_collision_layer(1)
-	$".".set_collision_mask(1)
-	$PlayerDetection.monitoring = true
-	$PlayerDetection/CollisionShape2D.disabled = false
-	$PlayerDamage/CollisionShape2D.disabled = false

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # player health
-var health = 3
+var health = 1
 # -1000 great break, -100 poor brake 
 var braking
 # 20 - 45
@@ -22,7 +22,7 @@ var acceleration = Vector2.ZERO
 var steer_direction
 
 func _ready():
-	$Sprite2D.texture = ResourceLoader.load(Global.selected_player.sprite)
+	$Area2D/Sprite2D.texture = ResourceLoader.load(Global.selected_player.sprite)
 	braking = Global.selected_player.braking
 	engine_power = 	Global.selected_player.engine_power
 	max_speed_reverse = Global.selected_player.max_speed_reverse
@@ -70,3 +70,5 @@ func calculate_steering(delta):
 		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
 #	velocity = new_heading * velocity.length()
 	rotation = new_heading.angle()
+
+

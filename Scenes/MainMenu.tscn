@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://r2gs15ru8ucv"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_hnk61"]
-[ext_resource type="Texture2D" uid="uid://cq5lmkbiabt5s" path="res://Textures/MainMenuBackground.jpg" id="3_c8hsy"]
+[ext_resource type="Texture2D" uid="uid://cq5lmkbiabt5s" path="res://Textures/UI_Images/Backgrounds/MainMenuBackground.jpg" id="3_2j0cv"]
 [ext_resource type="Theme" uid="uid://bgb7t63ytou7k" path="res://Assets/Theme/DarkTheme/Dark.theme" id="3_gv6cy"]
-[ext_resource type="Texture2D" uid="uid://bebq58fdcevhg" path="res://Textures/MainMenuFrameBack.png" id="4_i4vpf"]
+[ext_resource type="Texture2D" uid="uid://bebq58fdcevhg" path="res://Textures/UI_Images/Frames/MainMenuFrameBack.png" id="4_lw5ax"]
 [ext_resource type="Texture2D" uid="uid://b7xhs7kkedbpb" path="res://Textures/ChaseRunnerLogo.png" id="5_vnbij"]
 
 [node name="MainMenu" type="Control"]
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_c8hsy")
+texture = ExtResource("3_2j0cv")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
@@ -38,7 +38,7 @@ offset_right = 637.0
 offset_bottom = -229.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("4_i4vpf")
+texture = ExtResource("4_lw5ax")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 1
