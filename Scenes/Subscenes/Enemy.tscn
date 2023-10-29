@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://co6dgi7ydwjnh" path="res://Textures/Cars/police.png" id="2_t7y0m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60atd"]
-radius = 45.7143
-height = 151.429
+radius = 34.2857
+height = 154.286
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
