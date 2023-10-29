@@ -17,8 +17,8 @@ func _on_citta_2_pressed():
 # set sportiva sprite
 func _on_sportiva_pressed():
 	Global.selected_player.sprite = "res://Textures/Cars/car1.png"
-	Global.selected_player.braking = -700
-	Global.selected_player.engine_power = 900
+	Global.selected_player.braking = -600
+	Global.selected_player.engine_power = 550
 	Global.selected_player.max_speed_reverse = 300
 	$CarSelected.texture = load("res://Textures/Cars/car1.png")
 

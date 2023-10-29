@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-# player health
-var health = 1
 # -1000 great break, -100 poor brake 
 var braking
 # 20 - 45
@@ -34,10 +32,14 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	move_and_slide()
-	
-	if health <= 0:
-		queue_free()
-		$"../Window".visible = true
+	for index in get_slide_collision_count():
+		var collision := get_slide_collision(index)
+		if collision != null and collision.get_collider().name == "Enemy":
+			print("PROVA")
+			queue_free()
+			$"../Enemy".set_physics_process(false)
+			$"../Window".visible = true
+
 	
 func apply_friction(delta):
 	if acceleration == Vector2.ZERO and velocity.length() < 50:

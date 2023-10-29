@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60atd"]
 radius = 45.7143
-height = 148.571
+height = 151.429
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
