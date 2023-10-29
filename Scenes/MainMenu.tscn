@@ -16,7 +16,7 @@ grow_vertical = 2
 theme = ExtResource("3_gv6cy")
 script = ExtResource("1_hnk61")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,22 +25,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_2j0cv")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="ButtonsFrame" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -636.0
-offset_top = -560.0
-offset_right = 637.0
-offset_bottom = -229.0
+anchor_bottom = 0.5
+offset_left = -636.5
+offset_top = 10.0
+offset_right = 636.5
+offset_bottom = 165.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 texture = ExtResource("4_lw5ax")
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -57,15 +57,15 @@ stretch_mode = 4
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -604.0
-offset_top = -517.97
+offset_top = 55.0
 offset_right = 604.0
-offset_bottom = -267.97
+offset_bottom = 125.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GridContainer"]
 layout_mode = 2
@@ -113,6 +113,39 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "Esci"
 
+[node name="ButtonsFrame2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.845
+anchor_right = 0.5
+anchor_bottom = 0.845
+offset_left = -164.5
+offset_top = -81.0
+offset_right = 164.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_lw5ax")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.836
+anchor_right = 0.5
+anchor_bottom = 0.836
+offset_left = -154.0
+offset_top = -62.8798
+offset_right = 154.0
+offset_bottom = 3.12018
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Crediti"
+
 [connection signal="pressed" from="GridContainer/VBoxContainer/GridContainer/MarginContainer/GridContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="GridContainer/VBoxContainer/GridContainer/MarginContainer/GridContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="GridContainer/VBoxContainer/GridContainer/MarginContainer/GridContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

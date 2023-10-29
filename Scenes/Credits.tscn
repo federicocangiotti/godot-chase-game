@@ -1,0 +1,185 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpwjjofsvl8yp"]
+
+[ext_resource type="Theme" uid="uid://bgb7t63ytou7k" path="res://Assets/Theme/DarkTheme/Dark.theme" id="1_qwka8"]
+[ext_resource type="Texture2D" uid="uid://bl46kp61k8ka2" path="res://Textures/UI_Images/Backgrounds/Credits.png" id="2_8u6hy"]
+[ext_resource type="Script" path="res://Scenes/Credits.gd" id="2_mvdbc"]
+[ext_resource type="Texture2D" uid="uid://cnl3678thltr0" path="res://Textures/UI_Images/Frames/OptionsFrameBack.png" id="3_co2cb"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qwka8")
+script = ExtResource("2_mvdbc")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8u6hy")
+
+[node name="Frame" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -569.5
+offset_top = -408.0
+offset_right = 569.5
+offset_bottom = 408.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_co2cb")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -324.0
+offset_right = 510.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 160
+columns = 2
+
+[node name="3rdPartyAssetsContainer" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="3rdPartyAssets" type="Label" parent="GridContainer/3rdPartyAssetsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 36
+text = "3rd-party Assets"
+horizontal_alignment = 1
+
+[node name="3rdPartyAssetsDescr" type="Label" parent="GridContainer/3rdPartyAssetsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "-City Pack - Top Down - Pixel Art
+-
+by NYKNCK
+
+-------------------------------------------------
+
+The Japan Collection:
+Japanese City
+-
+by GuttyKreum
+
+-------------------------------------------------
+
+Bing-Ai
+
+and Google Images
+"
+horizontal_alignment = 1
+
+[node name="GameDevContainer" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="GameDevTitle" type="Label" parent="GridContainer/GameDevContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 36
+text = "Game Developer"
+horizontal_alignment = 1
+
+[node name="GameDevDescr" type="Label" parent="GridContainer/GameDevContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Ubaldi Edoardo
+Cangiotti Federico
+Nicolo' Renzi
+Danyil Havrylov
+
+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="GridContainer/GameDevContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 36
+text = "Game Tester"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GridContainer/GameDevContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Gentilucci Leonardo
+
+"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="GridContainer/GameDevContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 36
+text = "Assets"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="GridContainer/GameDevContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Ispani Filippo
+
+"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.69
+anchor_top = 0.82
+anchor_right = 0.69
+anchor_bottom = 0.82
+offset_left = 6.19995
+offset_top = 13.4
+offset_right = 195.6
+offset_bottom = 56.8
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "5G Games ©"

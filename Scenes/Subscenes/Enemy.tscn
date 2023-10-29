@@ -29,6 +29,7 @@ offset = Vector2(30, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
+debug_use_custom = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(30, -2)
