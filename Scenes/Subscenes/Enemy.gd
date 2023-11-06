@@ -12,7 +12,7 @@ func _physics_process(_delta: float) -> void:
 	var dir = to_local(Nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
 	Nav_agent.target_position = player.global_position
-	$Area2D/Sprite2D.global_rotation = $Area2D/Sprite2D.global_position.angle_to_point(Nav_agent.target_position)
+	$Area2D/Sprite2D.global_rotation = $Area2D/Sprite2D.global_position.angle_to_point(Nav_agent.get_next_path_position())
 	move_and_slide()
 
 #func _on_area_2d_body_entered(body):

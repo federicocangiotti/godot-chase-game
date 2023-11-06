@@ -3,11 +3,11 @@ extends CharacterBody2D
 # -1000 great break, -100 poor brake 
 var braking
 # 20 - 45
-var steering_angle = 45
+var steering_angle = 30
 # 100 - 1000
-var engine_power = 900
+var engine_power = 550
 # speed limit for reverse
-var max_speed_reverse = 300
+var max_speed_reverse = 150
 var wheel_base = 70
 
 var traction_fast = 10
@@ -72,5 +72,3 @@ func calculate_steering(delta):
 		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
 #	velocity = new_heading * velocity.length()
 	rotation = new_heading.angle()
-
-
