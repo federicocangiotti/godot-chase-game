@@ -3,11 +3,11 @@ extends CharacterBody2D
 # -1000 great break, -100 poor brake 
 var braking
 # 20 - 45
-var steering_angle = 30
+var steering_angle = 25
 # 100 - 1000
-var engine_power = 550
+var engine_power = 400
 # speed limit for reverse
-var max_speed_reverse = 150
+var max_speed_reverse = 130
 var wheel_base = 70
 
 var traction_fast = 10
