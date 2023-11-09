@@ -29,5 +29,10 @@ shape = SubResource("RectangleShape2D_57dsm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
+limit_left = -25
+limit_top = -45
+limit_right = 3900
+limit_bottom = 2015
+limit_smoothed = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
